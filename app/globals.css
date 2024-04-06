@@ -6,6 +6,20 @@
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
   --background-end-rgb: 255, 255, 255;
+
+  /*Color Purple*/
+  --dark-purple: #3b2142;
+  --dark-purple2: #12081c;
+  --violet: #514462;
+  --eminence: #742480;
+  --licorise: #150b1b;
+
+  /*Color green dark*/
+  --green-dark-rich: #06131d;
+  --green-dark-rich2: #08151d;
+  --green-charcoal: #253e48;
+  --green-dark-rich3: #07161d;
+  --green-dark-rich4: #05121a;
 }
 
 @media (prefers-color-scheme: dark) {
