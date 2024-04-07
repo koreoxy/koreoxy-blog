@@ -1,3 +1,4 @@
+import { title } from "process";
 import { defineConfig } from "tinacms";
 
 // Your hosting provider likely exposes this as an environment variable
@@ -54,6 +55,51 @@ export default defineConfig({
               return `/`;
             }
             return undefined;
+          },
+        },
+      },
+      {
+        name: "blog",
+        label: "Blogs",
+        path: "content/blog",
+        format: "mdx",
+        fields: [
+          {
+            name: "title",
+            type: "string",
+            label: "Title",
+            isTitle: true,
+            required: true,
+          },
+          {
+            name: "date",
+            type: "datetime",
+            label: "Date",
+            required: true,
+          },
+          {
+            name: "body",
+            type: "rich-text",
+            label: "Body",
+            isBody: true,
+          },
+        ],
+        defaultItem: () => {
+          return {
+            title: "New BLog Posts",
+            date: new Date(),
+          };
+        },
+        ui: {
+          router: ({ document }) => {
+            return `/blogs/${document._sys.filename}`;
+          },
+          filename: {
+            slugify: (values) => {
+              return `${(values.title || "")
+                .toLowerCase()
+                .replace(/ /gm, "-")}`.replace(/[^\w\.\/-\s]/gi, "");
+            },
           },
         },
       },

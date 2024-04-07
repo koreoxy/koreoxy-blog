@@ -1,7 +1,7 @@
 "use client";
 
 import { PageQuery } from "@/tina/__generated__/types";
-import { useTina } from "tinacms/dist/react";
+import { tinaField, useTina } from "tinacms/dist/react";
 import { TinaMarkdown } from "tinacms/dist/rich-text";
 
 export function PageComponent(props: {
@@ -19,8 +19,10 @@ export function PageComponent(props: {
 
   return (
     <article>
-      <h1 className="font-bold">{title}</h1>
-      <section>
+      <h1 data-tina-field={tinaField(data.page, "title")} className="font-bold">
+        {title}
+      </h1>
+      <section data-tina-field={tinaField(data.page, "body")}>
         <TinaMarkdown content={content} />
       </section>
     </article>
