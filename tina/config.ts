@@ -103,6 +103,41 @@ export default defineConfig({
           },
         },
       },
+      {
+        name: "favorite",
+        label: "Favorite",
+        path: "content/favorite",
+        fields: [
+          {
+            name: "title",
+            type: "string",
+            label: "Title",
+            isTitle: true,
+            required: true,
+          },
+          {
+            name: "description",
+            type: "string",
+            label: "Description",
+            required: true,
+          },
+          {
+            name: "link",
+            type: "string",
+            label: "Link",
+            required: true,
+          },
+        ],
+        ui: {
+          filename: {
+            slugify: (values) => {
+              return `${(values.title || "")
+                .toLowerCase()
+                .replace(/ /gm, "-")}`.replace(/[^\w\.\/-\s]/gi, "");
+            },
+          },
+        },
+      },
     ],
   },
 });
