@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 export const LinkCard = ({
@@ -19,8 +20,8 @@ export const LinkCard = ({
         <h2 className="z-20 text-xl font-medium text-zinc-800 group-hover:text-black dark:text-zinc-200 dark:group-hover:text-white lg:text-3xl">
           {title}
         </h2>
-        <p className="z-20 mt-4 text-sm text-zinc-600 group-hover:text-zinc-800 dark:text-zinc-400 dark:group-hover:text-zinc-200">
-          {description}
+        <p className="z-20 text-sm text-zinc-600 group-hover:text-zinc-800 dark:text-zinc-400 dark:group-hover:text-zinc-200">
+          {description.slice(0, 250)}
         </p>
       </article>
     </Link>

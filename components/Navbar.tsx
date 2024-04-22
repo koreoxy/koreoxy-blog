@@ -11,7 +11,7 @@ import { ThemeToggle } from "./ThemeToggle";
 
 export default function Navbar() {
   return (
-    <header className="mt-16 mb-20 flex content-center items-center justify-between text-base font-medium">
+    <header className="mb-16 flex content-center items-center justify-between text-base font-medium border-b dark:border-b-gray-600">
       <div className="flex gap-3 items-center">
         <div className="flex gap-3 items-center">
           <Image

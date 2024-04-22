@@ -20,7 +20,7 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning={true}>
       <body className={montserrat.className}>
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-          <div className="prose-xl mx-auto my-20 w-full max-w-4xl px-4 dark:prose-invert md:px-0">
+          <div className="prose-xl mx-auto w-full max-w-4xl px-4 dark:prose-invert md:px-0">
             <Navbar />
             <main>{children}</main>
           </div>

@@ -121,6 +121,7 @@ export default defineConfig({
             label: "Description",
             required: true,
           },
+          // { label: "Image", name: "image", type: "image" },
           {
             name: "link",
             type: "string",
